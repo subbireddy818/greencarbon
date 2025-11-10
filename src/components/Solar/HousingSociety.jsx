@@ -8,6 +8,7 @@ import WhyChooseGCH from "./WhyChooseGCH.jsx";
 import FAQ from "./FAQ.jsx";
 import OurClients from "./OurClients.jsx";
 import { Building, Users, DollarSign, Leaf, Zap, Shield } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 const TopCard = ({ icon, title, desc }) => (
   <article
@@ -44,7 +45,30 @@ const TopCard = ({ icon, title, desc }) => (
   </article>
 );
 
+const housingBenefits = [
+  {
+    id: "env",
+    icon: <Leaf className="text-green-600" />,
+    title: "Environmental Benefits",
+    desc: "By installing one kw solar panel, you can reduce 0.84 tonnes of carbon dioxide emissions. Keeping this in view, the Indian government has set a target of installing Gigawatt by 2030."
+  },
+  {
+    id: "eco",
+    icon: <DollarSign className="text-green-600" />,
+    title: "Economical Benefits",
+    desc: "By installing solar power, you can reduce your power bill by as much as 90% and get your ROI within 3 to 4 years. After that you enjoy free power for upto 21 to 22 years."
+  },
+  {
+    id: "national",
+    icon: <Building className="text-green-600" />,
+    title: "National Interest",
+    desc: "India imported coal worth 2.3 lakh crore between April to September of financial year 2023. We can save precious foreign exchange by switching to solar."
+  }
+];
+
 const HousingSociety = () => {
+  const [activeHousingBenefit, setActiveHousingBenefit] = useState(housingBenefits[0]);
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -65,6 +89,10 @@ const HousingSociety = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Form Submitted:\n" + JSON.stringify(form, null, 2));
+  };
+
+  const handleBookAppointment = () => {
+    navigate('/signup');
   };
 
   return (
@@ -111,9 +139,17 @@ const HousingSociety = () => {
               </h1>
               
               {/* Description */}
-              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px]">
-                Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Book An Appointment For A Free solar consultation for housing society in Hyderabad Today!
+              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-6">
+                Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub.
               </p>
+              <div className="flex justify-center">
+                <button
+                  onClick={handleBookAppointment}
+                  className="inline-block bg-orange-500 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
+                >
+                  Book Appointment
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -222,9 +258,15 @@ const HousingSociety = () => {
               </h1>
               
               {/* Description */}
-              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px]">
-                Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Book An Appointment For A Free solar consultation for housing society in Hyderabad Today!
+              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-8">
+                Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub.
               </p>
+              <button
+                onClick={handleBookAppointment}
+                className="inline-block bg-orange-500 text-white px-10 md:px-12 py-4 md:py-5 rounded-full text-lg md:text-xl font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
+              >
+                Book Appointment
+              </button>
             </div>
           </div>
 
@@ -369,31 +411,41 @@ const HousingSociety = () => {
               </p>
             </div>
 
-            <div
-              className="
-                grid place-items-center
-                gap-y-8 sm:gap-y-10
-                sm:grid-cols-2 sm:gap-x-6
-                lg:grid-cols-3
-                lg:gap-x-8
-                lg:justify-center
-              "
-            >
-              <TopCard
-                icon={<Leaf />}
-                title="Environmental Benefits"
-                desc="By installing one kw solar panel, you can reduce 0.84 tonnes of carbon dioxide emissions. Keeping this in view, the Indian government has set a target of installing Gigawatt by 2030."
-              />
-              <TopCard
-                icon={<DollarSign />}
-                title="Economical Benefits"
-                desc="By installing solar power, you can reduce your power bill by as much as 90% and get your ROI within 3 to 4 years. After that you enjoy free power for upto 21 to 22 years."
-              />
-              <TopCard
-                icon={<Building />}
-                title="National Interest"
-                desc="India imported coal worth 2.3 lakh crore between April to September of financial year 2023. We can save precious foreign exchange by switching to solar."
-              />
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
+              <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4">
+                {housingBenefits.map((benefit) => {
+                  const isActive = activeHousingBenefit.id === benefit.id;
+                  return (
+                    <button
+                      key={benefit.id}
+                      onClick={() => setActiveHousingBenefit(benefit)}
+                      className={`w-full pt-4 pb-5 px-5 text-left text-sm sm:text-base md:text-lg font-bold rounded-2xl transition-all duration-200 shadow-[0px_2px_10px_0px_rgba(3,4,28,0.06)] ${
+                        isActive
+                          ? "bg-[#3A954F] text-white"
+                          : "bg-white text-[#828282] hover:bg-gray-50"
+                      }`}
+                    >
+                      {benefit.title}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="w-full flex-1">
+                <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-10 lg:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
+                  <div className="mb-6">
+                    {React.cloneElement(activeHousingBenefit.icon, {
+                      className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600"
+                    })}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4">
+                    {activeHousingBenefit.title}
+                  </h3>
+                  <p className="text-base sm:text-lg text-[#333333] leading-relaxed">
+                    {activeHousingBenefit.desc}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

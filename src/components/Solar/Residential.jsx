@@ -9,65 +9,95 @@ import OtherBenefits from "./OtherBenefits.jsx";
 import Subsidy from "./Subsidy.jsx";
 import WhatWeDo from "./WhatWeDo.jsx";
 import { Home, DollarSign, Leaf, Zap, Shield, Settings } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
-const TopCard = ({ icon, title, desc }) => (
-  <article
-    className="
-      bg-white rounded-2xl shadow-md
-      flex flex-col items-center text-center
-      w-full max-w-[520px] mx-auto
-      lg:w-[379.99px] lg:h-[413.6px]
-    "
-    style={{
-      paddingTop: '60px',
-      paddingRight: '50px', 
-      paddingBottom: '60px',
-      paddingLeft: '60px'
-    }}
-  >
-    <div className="mb-4 text-green-600">
-      {React.cloneElement(icon, { className: "w-10 h-10 sm:w-12 sm:h-12" })}
-    </div>
-    <h3 className="text-[17px] sm:text-[19px] md:text-[20px] font-bold text-[#111827] mb-3 sm:mb-4">
-      {title}
-    </h3>
-    <p 
-      className="text-[#828282] text-justify"
-      style={{
-        fontFamily: 'Inter, sans-serif',
-        fontSize: '16px',
-        lineHeight: '24px',
-        marginBottom: '30px'
-      }}
-    >
-      {desc}
-    </p>
-  </article>
-);
+const residentialBenefits = [
+  {
+    id: "environmental",
+    icon: <Leaf className="text-green-600" />,
+    title: "Environmental Benefits",
+    desc: "By installing one kw solar panel, you can reduce 0.84 tonnes of carbon dioxide emissions. Keeping this in view, the Indian government has set a target of installing Gigawatt by 2030 as part of mission net zero."
+  },
+  {
+    id: "economical",
+    icon: <DollarSign className="text-green-600" />,
+    title: "Economical Benefits",
+    desc: "By installing solar power, you can reduce your power bill by as much as 90% and get your ROI within 3 to 4 years. After that you enjoy free power for upto 21 to 22 years."
+  },
+  {
+    id: "national-interest",
+    icon: <Home className="text-green-600" />,
+    title: "National Interest",
+    desc: "India imported coal worth 2.3 lakh crore between April to September of financial year 2023. We can save precious foreign exchange by switching to solar."
+  }
+];
 
-const BottomCard = ({ icon, title, desc }) => (
-  <article
-    className="
-      bg-white rounded-2xl shadow-md
-      flex flex-col items-center text-center
-      w-full max-w-[620px] mx-auto
-      lg:w-[585px] lg:h-[341.6px]
-      p-4 sm:p-5 lg:p-[15px]
-    "
-  >
-    <div className="mb-4 text-green-600">
-      {React.cloneElement(icon, { className: "w-10 h-10 sm:w-12 sm:h-12" })}
-    </div>
-    <h3 className="text-[17px] sm:text-[19px] md:text-[20px] font-bold text-[#111827] mb-3 sm:mb-4">
-      {title}
-    </h3>
-    <p className="text-[15px] sm:text-[16px] leading-7 text-[#333333] text-justify">
-      {desc}
-    </p>
-  </article>
-);
+const ResidentialBenefitsSection = () => {
+  const [activeBenefit, setActiveBenefit] = useState(residentialBenefits[0]);
+
+  return (
+    <section className="w-full bg-[#EBF3ED] py-10 sm:py-12 md:py-14">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px]">
+        <div className="mx-auto w-full lg:w-[1200px]">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-[24px] sm:text-[28px] md:text-[32px] font-bold text-[#333333] mb-2">
+              Benefits of Choosing Rooftop Solar Power for Homes
+            </h2>
+            <p
+              className="text-[#000000] mb-5 text-left"
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '16px',
+                lineHeight: '24px',
+                margin: '0px 0px 5px'
+              }}
+            >
+              Residential Rooftop Solar Panels have become more efficient and affordable with its vast benefits and government subsidies, making them a viable option for various types of homes, from single-family houses to multi-unit dwellings. Rooftop solar panel installation in Hyderabad not only helps you get free electricity but also helps you to earn money on each unit your solar power system produces.
+            </p>
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
+            <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4">
+              {residentialBenefits.map((benefit) => {
+                const isActive = activeBenefit.id === benefit.id;
+                return (
+                  <button
+                    key={benefit.id}
+                    onClick={() => setActiveBenefit(benefit)}
+                    className={`w-full pt-4 pb-5 px-5 text-left text-sm sm:text-base md:text-lg font-bold rounded-2xl transition-all duration-200 shadow-[0px_2px_10px_0px_rgba(3,4,28,0.06)] ${
+                      isActive
+                        ? 'bg-[#3A954F] text-white'
+                        : 'bg-white text-[#828282] hover:bg-gray-50'
+                    }`}
+                  >
+                    {benefit.title}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="w-full flex-1">
+              <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-10 lg:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
+                <div className="mb-6">
+                  {React.cloneElement(activeBenefit.icon, { className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600" })}
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4">
+                  {activeBenefit.title}
+                </h3>
+                <p className="text-base sm:text-lg text-[#333333] leading-relaxed">
+                  {activeBenefit.desc}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const ResidentialHeroSection = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -88,6 +118,10 @@ const ResidentialHeroSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Form Submitted:\n" + JSON.stringify(form, null, 2));
+  };
+
+  const handleGetStarted = () => {
+    navigate('/signup');
   };
 
   return (
@@ -131,12 +165,17 @@ const ResidentialHeroSection = () => {
             </h1>
             
             {/* Description */}
-            <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-4">
-              Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Reduce 0.84 tonnes of CO2 emissions per annum per KW of Solar power installed. Get Started Today!
+            <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-6">
+              Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Reduce 0.84 tonnes of CO2 emissions per annum per KW of Solar power installed.
             </p>
-            <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px]">
-              A Best Solar Company in Hyderabad that saves your Money and Time.
-            </p>
+            <div className="flex justify-center">
+              <button
+                onClick={handleGetStarted}
+                className="inline-block bg-orange-500 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
+              >
+                Get Started
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -238,12 +277,15 @@ const ResidentialHeroSection = () => {
             </h1>
             
             {/* Description */}
-            <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-4">
-              Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Reduce 0.84 tonnes of CO2 emissions per annum per KW of Solar power installed. Get Started Today!
+            <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-8">
+              Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Reduce 0.84 tonnes of CO2 emissions per annum per KW of Solar power installed.
             </p>
-            <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px]">
-              A Best Solar Company in Hyderabad that saves your Money and Time.
-            </p>
+            <button
+              onClick={handleGetStarted}
+              className="inline-block bg-orange-500 text-white px-10 md:px-12 py-4 md:py-5 rounded-full text-lg md:text-xl font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
+            >
+              Get Started
+            </button>
           </div>
         </div>
 
@@ -337,57 +379,7 @@ const Residential = () => {
       <ResidentialHeroSection />
       <CTAButtons />
       
-      <section className="w-full bg-[#EBF3ED] py-10 sm:py-12 md:py-14">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px]">
-          <div className="mx-auto w-full lg:w-[1200px]">
-            {}
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h2 className="text-[24px] sm:text-[28px] md:text-[32px] font-bold text-[#333333] mb-2">
-                Benefits of Choosing Rooftop Solar Power for Homes
-              </h2>
-              <p 
-                className="text-[#000000] mb-5 text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '16px',
-                  lineHeight: '24px',
-                  margin: '0px 0px 5px'
-                }}
-              >
-                Residential Rooftop Solar Panels have become more efficient and affordable with its vast benefits and government subsidies, making them a viable option for various types of homes, from single-family houses to multi-unit dwellings. Rooftop solar panel installation in Hyderabad not only helps you get free electricity but also helps you to earn money on each unit your solar power system produces.
-              </p>
-            </div>
-
-            {}
-            <div
-              className="
-                grid place-items-center
-                gap-y-8 sm:gap-y-10
-                sm:grid-cols-2 sm:gap-x-6
-                lg:grid-cols-3
-                lg:gap-x-8
-                lg:justify-center
-              "
-            >
-              <TopCard
-                icon={<Leaf />}
-                title="Environmental Benefits"
-                desc="By installing one kw solar panel, you can reduce 0.84 tonnes of carbon dioxide emissions. Keeping this in view, the Indian government has set a target of installing Gigawatt by 2030 as part of mission net zero."
-              />
-              <TopCard
-                icon={<DollarSign />}
-                title="Economical Benefits"
-                desc="By installing solar power, you can reduce your power bill by as much as 90% and get your ROI within 3 to 4 years. After that you enjoy free power for upto 21 to 22 years."
-              />
-              <TopCard
-                icon={<Home />}
-                title="National Interest"
-                desc="India imported coal worth 2.3 lakh crore between April to September of financial year 2023. We can save precious foreign exchange by switching to solar."
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ResidentialBenefitsSection />
       
       {}
       <OtherBenefits />

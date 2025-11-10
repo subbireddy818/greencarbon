@@ -6,6 +6,7 @@ import Weprovide from './Weprovide';
 import FAQ from './FAQ';
 import OurClients from './OurClients';
 import { Building, DollarSign, Leaf, Factory, GraduationCap, Pill, Snowflake, Cross, Egg } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 const TopCard = ({ icon, title, desc }) => (
   <article
@@ -113,6 +114,7 @@ const MediumCard = ({ icon, title, desc }) => (
 );
 
 const IndustrialCommercial = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   
   const [form, setForm] = useState({
@@ -136,6 +138,72 @@ const IndustrialCommercial = () => {
     e.preventDefault();
     alert("Form Submitted:\n" + JSON.stringify(form, null, 2));
   };
+
+  const handleBookAppointment = () => {
+    navigate('/signup');
+  };
+
+  const industrialBenefits = [
+    {
+      id: "env",
+      icon: <Leaf className="text-green-600" />,
+      title: "Environmental Benefits",
+      desc: "By installing one kw solar panel, you can reduce 0.84 tonnes of carbon dioxide emissions. Keeping this in view, the Indian government has set a target of installing Gigawatt by 2030."
+    },
+    {
+      id: "eco",
+      icon: <DollarSign className="text-green-600" />,
+      title: "Economical Benefits",
+      desc: "By installing solar power, you can reduce your power bill by as much as 90% and get your ROI within 3 to 4 years. After that you enjoy free power for upto 21 to 22 years."
+    },
+    {
+      id: "national",
+      icon: <Building className="text-green-600" />,
+      title: "National Interest",
+      desc: "India imported coal worth 2.3 lakh crore between April to September of financial year 2023. We can save precious foreign exchange by switching to solar."
+    }
+  ];
+
+  const [activeBenefit, setActiveBenefit] = useState(industrialBenefits[0]);
+  const industrialUseCases = [
+    {
+      id: "manufacturing",
+      icon: <Factory className="text-green-600" />,
+      title: "Rooftop Solar For Manufacturing Industries",
+      desc: "Various manufacturing industries such as Aerospace, Automobile, textile, Chemicals, Consumer Goods, Agricultural Machinery, etc. can utilize Rooftop Solar Energy to power their devices and components. This includes manufacturing machines, machine tools, equipment, lighting systems, and HVAC systems."
+    },
+    {
+      id: "education",
+      icon: <GraduationCap className="text-green-600" />,
+      title: "Rooftop Solar For Educational Institutes",
+      desc: "Educational institutes like Schools, Colleges, and Private Institutes house computer laboratories, science laboratories, research, and development centers that consume a significant amount of electricity. Installing Rooftop Solar Energy in these institutions can lead to substantial cost savings on these devices."
+    },
+    {
+      id: "pharma",
+      icon: <Pill className="text-green-600" />,
+      title: "Rooftop Solar For Pharma Companies",
+      desc: "Pharma Companies are large commercial spaces where electricity and water consumption are critical. By installing Solar Power Plants in Pharma Companies, a considerable amount of money can be saved while powering their machinery and devices."
+    },
+    {
+      id: "cold-storage",
+      icon: <Snowflake className="text-green-600" />,
+      title: "Rooftop Solar For Cold Storages",
+      desc: "Cold Storages and Warehouses used by Manufacturers, Importers, Exporters, and Farmers can use Rooftop Solar Energy to power cooling systems, lights, fans, and other equipment."
+    },
+    {
+      id: "hospitals",
+      icon: <Cross className="text-green-600" />,
+      title: "Rooftop Solar For Hospitals",
+      desc: "Hospitals require a significant amount of energy for medical devices, lighting, HVAC systems, and more. Rooftop Solar Panels can greatly reduce energy costs while ensuring uninterrupted power supply."
+    },
+    {
+      id: "hatcheries",
+      icon: <Egg className="text-green-600" />,
+      title: "Rooftop Solar For Hatcheries",
+      desc: "Hatcheries use machines such as incubators and air conditioners, consuming significant electricity. Installing Rooftop Solar Panels can help hatcheries save costs while operating sustainably."
+    }
+  ];
+  const [activeUseCase, setActiveUseCase] = useState(industrialUseCases[0]);
 
   useEffect(() => {
     setIsVisible(true);
@@ -185,9 +253,17 @@ const IndustrialCommercial = () => {
               </h1>
               
               {/* Description */}
-              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px]">
-                Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Book An Appointment For A Free Industrial Solar System Consultation in Hyderabad
+              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-6">
+                Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub.
               </p>
+              <div className="flex justify-center">
+                <button
+                  onClick={handleBookAppointment}
+                  className="inline-block bg-orange-500 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
+                >
+                  Book Appointment
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -296,9 +372,15 @@ const IndustrialCommercial = () => {
               </h1>
               
               {/* Description */}
-              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px]">
-                Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Book An Appointment For A Free Industrial Solar System Consultation in Hyderabad
+              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-8">
+                Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub.
               </p>
+              <button
+                onClick={handleBookAppointment}
+                className="inline-block bg-orange-500 text-white px-10 md:px-12 py-4 md:py-5 rounded-full text-lg md:text-xl font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
+              >
+                Book Appointment
+              </button>
             </div>
           </div>
 
@@ -421,31 +503,41 @@ const IndustrialCommercial = () => {
               </p>
             </div>
 
-            <div
-              className="
-                grid place-items-center
-                gap-y-8 sm:gap-y-10
-                sm:grid-cols-2 sm:gap-x-6
-                lg:grid-cols-3
-                lg:gap-x-8
-                lg:justify-center
-              "
-            >
-              <MediumCard
-                icon={<Leaf />}
-                title="Environmental Benefits"
-                desc="By installing one kw solar panel, you can reduce 0.84 tonnes of carbon dioxide emissions. Keeping this in view, the Indian government has set a target of installing Gigawatt by 2030."
-              />
-              <MediumCard
-                icon={<DollarSign />}
-                title="Economical Benefits"
-                desc="By installing solar power, you can reduce your power bill by as much as 90% and get your ROI within 3 to 4 years. After that you enjoy free power for upto 21 to 22 years."
-              />
-              <MediumCard
-                icon={<Building />}
-                title="National Interest"
-                desc="India imported coal worth 2.3 lakh crore between April to September of financial year 2023. We can save precious foreign exchange by switching to solar."
-              />
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
+              <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4">
+                {industrialBenefits.map((benefit) => {
+                  const isActive = activeBenefit.id === benefit.id;
+                  return (
+                    <button
+                      key={benefit.id}
+                      onClick={() => setActiveBenefit(benefit)}
+                      className={`w-full pt-4 pb-5 px-5 text-left text-sm sm:text-base md:text-lg font-bold rounded-2xl transition-all duration-200 shadow-[0px_2px_10px_0px_rgba(3,4,28,0.06)] ${
+                        isActive
+                          ? "bg-[#3A954F] text-white"
+                          : "bg-white text-[#828282] hover:bg-gray-50"
+                      }`}
+                    >
+                      {benefit.title}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="w-full flex-1">
+                <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-10 lg:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
+                  <div className="mb-6">
+                    {React.cloneElement(activeBenefit.icon, {
+                      className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600"
+                    })}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4">
+                    {activeBenefit.title}
+                  </h3>
+                  <p className="text-base sm:text-lg text-[#333333] leading-relaxed">
+                    {activeBenefit.desc}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -474,46 +566,41 @@ const IndustrialCommercial = () => {
               </p>
             </div>
 
-            <div
-              className="
-                grid place-items-center
-                gap-y-8 sm:gap-y-10
-                sm:grid-cols-2 sm:gap-x-6
-                lg:grid-cols-3
-                lg:gap-x-8
-                lg:justify-center
-              "
-            >
-              <TopCard
-                icon={<Factory />}
-                title="Rooftop Solar For Manufacturing Industries"
-                desc="Various manufacturing industries such as Aerospace, Automobile, textile, Chemicals, Consumer Goods, Agricultural Machinery, etc. can utilize Rooftop Solar Energy to power their devices and components. This includes manufacturing machines, machine tools, equipment, lighting systems, and HVAC systems."
-              />
-              <TopCard
-                icon={<GraduationCap />}
-                title="Rooftop Solar For Educational Institutes"
-                desc="Educational institutes like Schools, Colleges, and Private Institutes house computer laboratories, science laboratories, research, and development centers that consume a significant amount of electricity. Installing Rooftop Solar Energy in these institutions can lead to substantial cost savings on these devices."
-              />
-              <TopCard
-                icon={<Pill />}
-                title="Rooftop Solar For Pharma Companies"
-                desc="Pharma Companies are large commercial spaces where electricity and water consumption are critical. By installing Solar Power Plants in Pharma Companies, a considerable amount of money can be saved while powering their machinery and devices."
-              />
-              <TopCard
-                icon={<Snowflake />}
-                title="Rooftop Solar For Cold Storages"
-                desc="Cold Storages and Warehouses used by Manufacturers, Importers, Exporters, and Farmers can use Rooftop Solar Energy to power cooling systems, lights, fans, and other equipment."
-              />
-              <TopCard
-                icon={<Cross />}
-                title="Rooftop Solar For Hospitals"
-                desc="Hospitals require a significant amount of energy for medical devices, lighting, HVAC systems, and more. Rooftop Solar Panels can greatly reduce energy costs while ensuring uninterrupted power supply."
-              />
-              <TopCard
-                icon={<Egg />}
-                title="Rooftop Solar For Hatcheries"
-                desc="Hatcheries use machines such as incubators and air conditioners, consuming significant electricity. Installing Rooftop Solar Panels can help hatcheries save costs while operating sustainably."
-              />
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
+              <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4 max-h-[520px] overflow-y-auto pr-1">
+                {industrialUseCases.map((useCase) => {
+                  const isActive = activeUseCase.id === useCase.id;
+                  return (
+                    <button
+                      key={useCase.id}
+                      onClick={() => setActiveUseCase(useCase)}
+                      className={`w-full pt-4 pb-5 px-5 text-left text-sm sm:text-base md:text-lg font-bold rounded-2xl transition-all duration-200 shadow-[0px_2px_10px_0px_rgba(3,4,28,0.06)] ${
+                        isActive
+                          ? "bg-[#3A954F] text-white"
+                          : "bg-white text-[#828282] hover:bg-gray-50"
+                      }`}
+                    >
+                      {useCase.title}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="w-full flex-1">
+                <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-10 lg:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
+                  <div className="mb-6">
+                    {React.cloneElement(activeUseCase.icon, {
+                      className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600"
+                    })}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4 text-center">
+                    {activeUseCase.title}
+                  </h3>
+                  <p className="text-base sm:text-lg text-[#333333] leading-relaxed text-center">
+                    {activeUseCase.desc}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
