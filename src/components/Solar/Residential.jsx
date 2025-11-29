@@ -37,10 +37,10 @@ const ResidentialBenefitsSection = () => {
 
   return (
     <section className="w-full bg-[#EBF3ED] py-10 sm:py-12 md:py-14">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px]">
-        <div className="mx-auto w-full lg:w-[1200px]">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="mx-auto w-full lg:max-w-[1100px] xl:max-w-[1200px]">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
-            <h2 className="text-[24px] sm:text-[28px] md:text-[32px] font-bold text-[#333333] mb-2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-2">
               Benefits of Choosing Rooftop Solar Power for Homes
             </h2>
             <p
@@ -56,8 +56,8 @@ const ResidentialBenefitsSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
-            <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-6 xl:gap-8">
+            <div className="w-full lg:w-[320px] xl:w-[360px] flex flex-col gap-4 lg:mt-4 flex-shrink-0">
               {residentialBenefits.map((benefit) => {
                 const isActive = activeBenefit.id === benefit.id;
                 return (
@@ -76,8 +76,8 @@ const ResidentialBenefitsSection = () => {
               })}
             </div>
 
-            <div className="w-full flex-1">
-              <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-10 lg:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
+            <div className="w-full flex-1 min-w-0">
+              <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 lg:p-10 xl:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
                 <div className="mb-6">
                   {React.cloneElement(activeBenefit.icon, { className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600" })}
                 </div>
@@ -130,7 +130,7 @@ const ResidentialHeroSection = () => {
       <div 
         className="hidden lg:block absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/bg_banner.jpeg')",
+          backgroundImage: "url('/residential-solar.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
@@ -144,7 +144,7 @@ const ResidentialHeroSection = () => {
       <div 
         className="block lg:hidden relative min-h-screen"
         style={{
-          backgroundImage: "url('/bg_banner.jpeg')",
+          backgroundImage: "url('/residential-solar.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "30% center",
           backgroundRepeat: "no-repeat"

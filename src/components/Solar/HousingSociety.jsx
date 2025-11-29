@@ -104,7 +104,7 @@ const HousingSociety = () => {
         <div 
           className="hidden lg:block absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('/bg_banner.jpeg')",
+            backgroundImage: "url('/housing-society-solar.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat"
@@ -118,7 +118,7 @@ const HousingSociety = () => {
         <div 
           className="block lg:hidden relative min-h-screen"
           style={{
-            backgroundImage: "url('/bg_banner.jpeg')",
+            backgroundImage: "url('/housing-society-solar.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "30% center",
             backgroundRepeat: "no-repeat"
@@ -395,7 +395,7 @@ const HousingSociety = () => {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px]">
           <div className="mx-auto w-full lg:w-[1200px]">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h2 className="text-[24px] sm:text-[28px] md:text-[32px] font-bold text-[#333333] mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-4">
                 Benefits of Choosing A Rooftop Solar Power System For Housing Society?
               </h2>
               <p 

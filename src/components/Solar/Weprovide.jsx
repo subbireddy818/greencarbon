@@ -35,7 +35,7 @@ export default function Weprovide({ type = "residential" }) {
   return (
     <section className="w-full bg-[#EAF3ED]">
       <div className="mx-auto max-w-[1200px] px-[15px]">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#111827] pt-[100px] pb-[100px]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#111827] pt-[100px] pb-[100px]">
           We Provide
         </h2>
 
