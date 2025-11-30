@@ -94,7 +94,7 @@ function HomePage() {
       <WhyGCHSection />
       <Installations />
       <HomeServicesSection />
-      <Clients />
+      <OurClients />
       <Team />
       {/* <Board /> */}
       <Contact />

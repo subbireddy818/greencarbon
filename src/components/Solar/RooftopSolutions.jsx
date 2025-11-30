@@ -42,11 +42,11 @@ export default function RooftopSolutions() {
   }, []);
 
   return (
-    <section className={`w-full bg-white pt-12 sm:pt-16 md:pt-20 lg:pt-[100px] pb-12 sm:pb-16 md:pb-20 lg:pb-[70px] transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <section className={`w-full bg-white py-10 sm:py-12 md:py-14 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       {}
       <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-16">
         {}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#111827]">
             Our rooftop solutions
           </h2>

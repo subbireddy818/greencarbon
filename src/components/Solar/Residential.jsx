@@ -37,8 +37,8 @@ const ResidentialBenefitsSection = () => {
 
   return (
     <section className="w-full bg-[#EBF3ED] py-10 sm:py-12 md:py-14">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-8 xl:px-12 2xl:px-16">
-        <div className="mx-auto w-full lg:max-w-[1100px] xl:max-w-[1200px]">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px]">
+        <div className="mx-auto w-full lg:w-[1200px]">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-2">
               Benefits of Choosing Rooftop Solar Power for Homes
@@ -56,8 +56,8 @@ const ResidentialBenefitsSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-6 xl:gap-8">
-            <div className="w-full lg:w-[320px] xl:w-[360px] flex flex-col gap-4 lg:mt-4 flex-shrink-0">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
+            <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4 max-h-[520px] overflow-y-auto pr-1">
               {residentialBenefits.map((benefit) => {
                 const isActive = activeBenefit.id === benefit.id;
                 return (

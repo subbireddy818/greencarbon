@@ -50,14 +50,15 @@ const GCHBenefits = () => {
         </motion.h2>
 
         <motion.p
-          className="text-left mx-auto mb-12"
+          className="text-left mx-auto"
           style={{
             fontSize: '17.6px',
             lineHeight: '1.6',
             color: '#555555',
             fontFamily: 'Inter, sans-serif',
-            margin: '0px 0px 24px',
-            width: '1200px'
+            margin: '40px auto 24px',
+            width: '1200px',
+            textAlign: 'left'
           }}
           initial={{ opacity: 0, x: 30 }}
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
@@ -143,14 +144,15 @@ const GCHBenefits = () => {
 
         {}
         <motion.p
-          className="text-left mx-auto mt-12"
+          className="text-left mx-auto"
           style={{
             fontSize: '17.6px',
             lineHeight: '1.6',
             color: '#555555',
             fontFamily: 'Inter, sans-serif',
-            margin: '0px 0px 24px',
-            width: '1200px'
+            margin: '40px auto 24px',
+            width: '1200px',
+            textAlign: 'left'
           }}
           initial={{ opacity: 0, x: 30 }}
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}

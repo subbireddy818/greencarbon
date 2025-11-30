@@ -360,9 +360,29 @@ const HousingSociety = () => {
       
       <section className="w-full bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center gap-4 flex-wrap">
             <button 
-              className="bg-[#3A954F] hover:bg-[#2d7a3d] text-white font-semibold px-8 py-4 text-lg transition-colors duration-200"
+              onClick={() => {
+                navigate('/solar-installation');
+                setTimeout(() => {
+                  const element = document.getElementById('subsidy-structure');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="bg-[#3A954F] hover:bg-[#2d7a3d] text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+              style={{ borderRadius: '25px' }}
+            >
+              AVAIL SUBSIDY
+            </button>
+            <button 
+              onClick={() => {
+                navigate('/solar-installation');
+                setTimeout(() => {
+                  const element = document.getElementById('our-finance-options');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="bg-[#3A954F] hover:bg-[#2d7a3d] text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
               style={{ borderRadius: '25px' }}
             >
               VIEW FINANCE OPTIONS
@@ -412,7 +432,7 @@ const HousingSociety = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
-              <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4">
+              <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4 max-h-[520px] overflow-y-auto pr-1">
                 {housingBenefits.map((benefit) => {
                   const isActive = activeHousingBenefit.id === benefit.id;
                   return (
@@ -431,21 +451,19 @@ const HousingSociety = () => {
                 })}
               </div>
 
-              <div className="w-full flex-1">
-                <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-10 lg:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
-                  <div className="mb-6">
-                    {React.cloneElement(activeHousingBenefit.icon, {
-                      className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600"
-                    })}
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4">
-                    {activeHousingBenefit.title}
-                  </h3>
-                  <p className="text-base sm:text-lg text-[#333333] leading-relaxed">
-                    {activeHousingBenefit.desc}
-                  </p>
+            <div className="w-full flex-1 min-w-0">
+              <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 lg:p-10 xl:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
+                <div className="mb-6">
+                  {React.cloneElement(activeHousingBenefit.icon, { className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600" })}
                 </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4">
+                  {activeHousingBenefit.title}
+                </h3>
+                <p className="text-base sm:text-lg text-[#333333] leading-relaxed">
+                  {activeHousingBenefit.desc}
+                </p>
               </div>
+            </div>
             </div>
           </div>
         </div>
