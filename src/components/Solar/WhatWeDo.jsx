@@ -78,10 +78,10 @@ export default function WhatWeDo() {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-16">
+      <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-6 xl:px-16">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#111827]">
-            What GreenCarbonHub Does?
+            What <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span> Does?
           </h2>
         </div>
 

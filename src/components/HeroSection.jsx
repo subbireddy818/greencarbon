@@ -18,17 +18,17 @@ const HeroSection = () => {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/10" />
 
-      <div className="relative z-10 max-w-7xl mx-auto h-full px-6 md:px-12 lg:px-16">
-        <div className="h-full flex flex-col justify-center md:justify-start pt-16 sm:pt-24 md:pt-16 lg:pt-32">
+      <div className="relative z-10 max-w-7xl mx-auto h-full px-6 md:px-10 lg:px-12 xl:px-16">
+        <div className="h-full flex flex-col justify-center md:justify-start pt-16 sm:pt-24 md:pt-16 lg:pt-24 xl:pt-32">
           <h1
             className="text-white font-extrabold leading-tight max-w-4xl
-                       text-3xl sm:text-4xl md:text-6xl lg:text-7xl animate-fade-up"
+                       text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl animate-fade-up"
             style={{ animationDelay: "0.12s" }}
           >
             Reduce/Offset your Carbon Footprint
           </h1>
-          <h2 className="text-orange-400 font-extrabold max-w-4xl mt-4 sm:mt-6 md:mt-6
-                       text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] animate-fade-up" style={{ animationDelay: "0.12s" }}>We offer Integrated Net-zero solutions, with focus on solar and water & wastewater management, for businesses and individuals looking to reduce their carbon footprint. </h2>
+          <h2 className="text-white font-extrabold max-w-4xl mt-4 sm:mt-6 md:mt-6
+                       text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl animate-fade-up leading-relaxed" style={{ animationDelay: "0.12s" }}>We offer Integrated Net-zero solutions, with focus on solar and water & wastewater management, for businesses and individuals looking to reduce their carbon footprint. </h2>
           
           <div className="mt-6 md:hidden text-center relative z-10">
             <button

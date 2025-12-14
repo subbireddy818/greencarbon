@@ -46,7 +46,7 @@ const GCHBenefits = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Why Should You Choose GCH for Your Rooftop Solar Power Project?
+          Why Should You Choose <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span> for Your Rooftop Solar Power Project?
         </motion.h2>
 
         <motion.p
@@ -64,9 +64,9 @@ const GCHBenefits = () => {
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          <span className="font-bold text-gray-800">GreenCarbonHub</span> is promoted by a Civil Servant with
+          <span className="font-bold text-gray-800"><span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span></span> is promoted by a Civil Servant with
           23 years of experience in administration, particularly in power management, solid waste management,
-          and liquid waste management. Supported by a team of experienced experts, GreenCarbonHub offers all
+          and liquid waste management. Supported by a team of experienced experts, <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span> offers all
           Net-Zero solutions under one roof. If you are looking for the best rooftop solar company in Hyderabad,
           we are just a few miles away. Here are the reasons to choose us:
         </motion.p>
@@ -158,7 +158,7 @@ const GCHBenefits = () => {
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
           transition={{ duration: 0.8, delay: 1.5, ease: "easeOut" }}
         >
-          <span className="font-bold text-gray-800">GreenCarbonHub</span> has a team of qualified, experienced,
+          <span className="font-bold text-gray-800"><span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span></span> has a team of qualified, experienced,
           and dedicated engineers who designed and installed many residential rooftop solar power systems earlier.
           We work closely with you to identify and resolve all your residential solar energy needs. With the best
           residential rooftop solar company in Hyderabad like us, you can expect the best quality service, reliable

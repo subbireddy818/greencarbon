@@ -40,8 +40,8 @@ const LoadingScreen = () => {
             {/* Center logo with glow effect */}
             <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center shadow-2xl animate-pulse">
               <div className="relative">
-                <span className="text-3xl font-bold bg-gradient-to-r from-green-600 via-blue-600 to-green-600 bg-clip-text text-transparent animate-pulse">
-                  GCH
+                <span className="text-3xl font-bold animate-pulse">
+                  <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span>
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 rounded-full blur-sm opacity-30 animate-ping"></div>
               </div>
@@ -110,9 +110,7 @@ const LoadingScreen = () => {
         {/* Enhanced text and progress */}
         <div className="space-y-4">
           <h2 className="text-3xl font-bold text-gray-800 animate-pulse">
-            <span className="bg-gradient-to-r from-green-600 via-blue-600 to-green-600 bg-clip-text text-transparent">
-              GreenCarbonHub
-            </span>
+            <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span>
           </h2>
           <p className="text-lg text-gray-600 animate-pulse">
             Building a sustainable future...

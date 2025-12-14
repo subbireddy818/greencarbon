@@ -218,7 +218,7 @@ const IndustrialCommercial = () => {
         <div 
           className="hidden lg:block absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('/industrial-solar.jpg')",
+            backgroundImage: "url('/bg_banner.jpeg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat"
@@ -232,7 +232,7 @@ const IndustrialCommercial = () => {
         <div 
           className="block lg:hidden relative min-h-screen"
           style={{
-            backgroundImage: "url('/industrial-solar.jpg')",
+            backgroundImage: "url('/bg_banner.jpeg')",
             backgroundSize: "cover",
             backgroundPosition: "30% center",
             backgroundRepeat: "no-repeat"
@@ -359,7 +359,7 @@ const IndustrialCommercial = () => {
         {/* Desktop Layout - Side by Side */}
         <div className="hidden lg:flex relative z-10 min-h-screen flex-row w-full">
           {/* Banner Section - Left Side (Desktop) */}
-          <div className="flex-1 flex items-center justify-center p-12">
+          <div className="flex-1 flex items-center justify-center p-6 lg:p-8 xl:p-12">
             <div className="text-white max-w-2xl w-full">
               {/* Badge */}
               {/* <div className="text-green-400 mb-8">
@@ -367,17 +367,17 @@ const IndustrialCommercial = () => {
               </div> */}
               
               {/* Main Heading */}
-              <h1 className="text-white font-bold leading-tight text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-7xl mb-8">
+              <h1 className="text-white font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-6 lg:mb-8">
                 Reduce Your Power Bill By Upto 90% By Switching To Solar
               </h1>
               
               {/* Description */}
-              <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-8">
+              <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-6 lg:mb-8 leading-relaxed">
                 Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub.
               </p>
               <button
                 onClick={handleBookAppointment}
-                className="inline-block bg-orange-500 text-white px-10 md:px-12 py-4 md:py-5 rounded-full text-lg md:text-xl font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
+                className="inline-block bg-orange-500 text-white px-8 lg:px-10 xl:px-12 py-3 lg:py-4 xl:py-5 rounded-full text-base lg:text-lg xl:text-xl font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
               >
                 Book Appointment
               </button>
@@ -385,7 +385,7 @@ const IndustrialCommercial = () => {
           </div>
 
           {/* Form Section - Right Side (Desktop) */}
-          <div className="w-[600px] xl:w-[700px] flex-shrink-0 p-12 flex flex-col justify-center">
+          <div className="w-[500px] lg:w-[550px] xl:w-[600px] 2xl:w-[700px] flex-shrink-0 p-6 lg:p-8 xl:p-12 flex flex-col justify-center">
             {/* Contact Form */}
             <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 shadow-xl w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto lg:max-w-none lg:mx-0">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 md:mb-8 text-center lg:text-left">Contact Us</h2>
@@ -473,29 +473,9 @@ const IndustrialCommercial = () => {
       </div>
       
       <section className="w-full bg-white pt-[120px] pb-[80px]">
-        <div className="flex justify-center items-center gap-4 flex-wrap">
+        <div className="flex justify-center">
           <button 
-            onClick={() => {
-              navigate('/solar-installation');
-              setTimeout(() => {
-                const element = document.getElementById('subsidy-structure');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
-            className="bg-[#3A954F] hover:bg-[#2d7a3d] text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-            style={{ borderRadius: '25px' }}
-          >
-            AVAIL SUBSIDY
-          </button>
-          <button 
-            onClick={() => {
-              navigate('/solar-installation');
-              setTimeout(() => {
-                const element = document.getElementById('our-finance-options');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
-            className="bg-[#3A954F] hover:bg-[#2d7a3d] text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+            className="bg-green-600 hover:bg-green-700 text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
             style={{ borderRadius: '25px' }}
           >
             VIEW FINANCE OPTIONS
@@ -504,10 +484,10 @@ const IndustrialCommercial = () => {
       </section>
 
       <section className="w-full bg-[#EBF3ED] py-10 sm:py-12 md:py-14">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px]">
-          <div className="mx-auto w-full lg:w-[1200px]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-6 xl:px-12 2xl:px-[120px]">
+          <div className="mx-auto w-full lg:max-w-[1100px] xl:max-w-[1200px]">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-2">
+              <h2 className="text-[24px] sm:text-[28px] md:text-[28px] lg:text-[30px] xl:text-[32px] font-bold text-[#333333] mb-2 leading-tight px-2 sm:px-0">
                 Why Choose An Industrial Rooftop Solar Power System For Your Business?
               </h2>
               <p 
@@ -523,8 +503,8 @@ const IndustrialCommercial = () => {
               </p>
             </div>
 
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
-              <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4 max-h-[520px] overflow-y-auto pr-1">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-4 xl:gap-10">
+              <div className="w-full lg:w-[300px] xl:w-[380px] flex flex-col gap-4 lg:mt-4 flex-shrink-0">
                 {industrialBenefits.map((benefit) => {
                   const isActive = activeBenefit.id === benefit.id;
                   return (
@@ -543,19 +523,21 @@ const IndustrialCommercial = () => {
                 })}
               </div>
 
-            <div className="w-full flex-1 min-w-0">
-              <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 lg:p-10 xl:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
-                <div className="mb-6">
-                  {React.cloneElement(activeBenefit.icon, { className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600" })}
+              <div className="w-full flex-1">
+                <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-10 lg:p-12 min-h-[360px] flex flex-col items-center text-center justify-center">
+                  <div className="mb-6">
+                    {React.cloneElement(activeBenefit.icon, {
+                      className: "w-16 h-16 sm:w-20 sm:h-20 text-green-600"
+                    })}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4">
+                    {activeBenefit.title}
+                  </h3>
+                  <p className="text-base sm:text-lg text-[#333333] leading-relaxed">
+                    {activeBenefit.desc}
+                  </p>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#111827] mb-4">
-                  {activeBenefit.title}
-                </h3>
-                <p className="text-base sm:text-lg text-[#333333] leading-relaxed">
-                  {activeBenefit.desc}
-                </p>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -563,11 +545,15 @@ const IndustrialCommercial = () => {
       
       <OtherBenefits />
       
+      <GCHBenefits />
+      
+      <Weprovide type="industrial" />
+      
       <section className="w-full bg-[#EBF3ED] py-10 sm:py-12 md:py-14">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px]">
-          <div className="mx-auto w-full lg:w-[1200px]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-6 xl:px-12 2xl:px-[120px]">
+          <div className="mx-auto w-full lg:max-w-[1100px] xl:max-w-[1200px]">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h2 className="text-[24px] sm:text-[28px] md:text-[42px] font-bold text-[#333333] mb-2">
+              <h2 className="text-[24px] sm:text-[28px] md:text-[28px] lg:text-[32px] xl:text-[38px] 2xl:text-[42px] font-bold text-[#333333] mb-2 leading-tight px-2 sm:px-0">
                 How Businesses Can Utilize Industrial Solar Power System?
               </h2>
               <p 
@@ -584,8 +570,8 @@ const IndustrialCommercial = () => {
               </p>
             </div>
 
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
-              <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4 max-h-[520px] overflow-y-auto pr-1">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-4 xl:gap-10">
+              <div className="w-full lg:w-[300px] xl:w-[380px] flex flex-col gap-4 lg:mt-4 max-h-[520px] overflow-y-auto pr-1 flex-shrink-0">
                 {industrialUseCases.map((useCase) => {
                   const isActive = activeUseCase.id === useCase.id;
                   return (
@@ -623,10 +609,6 @@ const IndustrialCommercial = () => {
           </div>
         </div>
       </section>
-      
-      <GCHBenefits />
-      
-      <Weprovide type="industrial" />
       
       <FAQ />
       

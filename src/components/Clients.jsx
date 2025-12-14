@@ -63,12 +63,12 @@ const Clients = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
           {clients.map((client, index) => (
             <div
               key={client.id}
               className={`
-                group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-700 ease-out
+                group relative bg-white rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-700 ease-out
                 hover:scale-105 hover:-translate-y-2 transform border border-gray-100
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
                 ${hoveredClient === client.id ? 'ring-2 ring-green-500 ring-opacity-50' : ''}
@@ -80,18 +80,18 @@ const Clients = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <div className="relative z-10">
-                <div className="flex justify-center mb-6">
-                  <div className="w-20 h-20 md:w-24 md:h-24 bg-gray-50 rounded-xl flex items-center justify-center group-hover:bg-white transition-colors duration-300 shadow-sm group-hover:shadow-md">
+                <div className="flex justify-center mb-3 md:mb-6">
+                  <div className="w-16 h-16 md:w-24 md:h-24 bg-gray-50 rounded-xl flex items-center justify-center group-hover:bg-white transition-colors duration-300 shadow-sm group-hover:shadow-md">
                     <img
                       src={client.image}
                       alt={client.name}
-                      className="w-16 h-16 md:w-20 md:h-20 object-contain filter group-hover:scale-110 transition-transform duration-300"
+                      className="w-12 h-12 md:w-20 md:h-20 object-contain filter group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                 </div>
 
                 <div className="text-center">
-                  <div className="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full mb-4">
+                  <div className="inline-block px-2 py-0.5 md:px-3 md:py-1 bg-green-100 text-green-700 text-[10px] md:text-xs font-semibold rounded-full mb-2 md:mb-4">
                     {client.category}
                   </div>
                   

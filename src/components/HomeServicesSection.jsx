@@ -57,7 +57,7 @@ const HomeServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={service.id}
-              className={`w-full ${
+              className={`w-full ${service.title === 'GCH Store' ? 'group' : ''} ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{
@@ -66,8 +66,12 @@ const HomeServicesSection = () => {
               }}
             >
               
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 md:mb-6 text-center">
-                {service.title}
+              <h3 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 md:mb-6 text-center ${service.title === 'GCH Store' ? 'cursor-pointer' : ''}`}>
+                {service.title === 'GCH Store' ? (
+                  <><span className="text-green-600 group-hover:text-orange-400 transition-colors duration-300">GC</span><span className="text-orange-400 group-hover:text-green-600 transition-colors duration-300">H</span> Store</>
+                ) : (
+                  service.title
+                )}
               </h3>
               
              

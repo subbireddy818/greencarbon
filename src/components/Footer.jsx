@@ -10,9 +10,8 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="mb-6">
               <h2 className="text-2xl font-bold mb-2">
-                <span className="text-green-400">Green</span>
-                <span className="text-orange-500">Carbon</span>
-                <span className="text-green-400">Hub</span>
+                <span className="text-green-400">GreenCarbon</span>
+                <span className="text-orange-500">Hub</span>
               </h2>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -99,7 +98,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © 2025 <span className="text-orange-500">GreenCarbonHub</span>. All Rights Reserved.
+              © 2025 <span className="text-green-400">GreenCarbon</span><span className="text-orange-500">Hub</span>. All Rights Reserved.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/GreenCarbonHub/" className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center hover:opacity-80 transition">

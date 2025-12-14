@@ -7,7 +7,6 @@ import GCHBenefits from "./GCHBenefits.jsx";
 import OtherBenefits from "./OtherBenefits.jsx";
 import { Monitor, DollarSign, Home as HomeIcon, Settings, Leaf } from "lucide-react";
 import Weprovide from "./Weprovide.jsx";
-import Subsidy from "./Subsidy.jsx";
 import RooftopSolutions from "./RooftopSolutions.jsx";
 import FinanceOptions from "./FinanceOptions.jsx";
 import DocumentRequirements from "./DocumentRequirements.jsx";
@@ -76,7 +75,6 @@ function SolarInstallation() {
       <WhyChooseGCH />
       <OtherBenefits tabbedItems={solarBenefitsTabs} />
       <Weprovide type="residential" />
-      <Subsidy />
       <RooftopSolutions />
       <FinanceOptions />
       <DocumentRequirements />

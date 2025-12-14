@@ -6,7 +6,6 @@ import WhyChooseGCH from "./WhyChooseGCH.jsx";
 import FAQ from "./FAQ.jsx";
 import OurClients from "./OurClients.jsx";
 import OtherBenefits from "./OtherBenefits.jsx";
-import Subsidy from "./Subsidy.jsx";
 import WhatWeDo from "./WhatWeDo.jsx";
 import { Home, DollarSign, Leaf, Zap, Shield, Settings } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
@@ -37,10 +36,10 @@ const ResidentialBenefitsSection = () => {
 
   return (
     <section className="w-full bg-[#EBF3ED] py-10 sm:py-12 md:py-14">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[120px]">
-        <div className="mx-auto w-full lg:w-[1200px]">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-6 xl:px-12 2xl:px-16">
+        <div className="mx-auto w-full lg:max-w-[1100px] xl:max-w-[1200px]">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#333333] mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#333333] mb-2 px-2 sm:px-0 leading-tight">
               Benefits of Choosing Rooftop Solar Power for Homes
             </h2>
             <p
@@ -56,8 +55,8 @@ const ResidentialBenefitsSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
-            <div className="w-full lg:w-[380px] flex flex-col gap-4 lg:mt-4 max-h-[520px] overflow-y-auto pr-1">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-4 xl:gap-8">
+            <div className="w-full lg:w-[300px] xl:w-[360px] flex flex-col gap-4 lg:mt-4 flex-shrink-0">
               {residentialBenefits.map((benefit) => {
                 const isActive = activeBenefit.id === benefit.id;
                 return (
@@ -264,7 +263,7 @@ const ResidentialHeroSection = () => {
       {/* Desktop Layout - Side by Side */}
       <div className="hidden lg:flex relative z-10 min-h-screen flex-row w-full">
         {/* Banner Section - Left Side (Desktop) */}
-        <div className="flex-1 flex items-center justify-center p-12">
+        <div className="flex-1 flex items-center justify-center p-6 lg:p-8 xl:p-12">
           <div className="text-white max-w-2xl w-full">
             {/* Badge */}
             {/* <div className="text-green-400 mb-8">
@@ -272,17 +271,17 @@ const ResidentialHeroSection = () => {
             </div> */}
             
             {/* Main Heading */}
-            <h1 className="text-white font-bold leading-tight text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-7xl mb-8">
+            <h1 className="text-white font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-6 lg:mb-8">
               Best Residential Rooftop Solar Panel Installation Company in Hyderabad
             </h1>
             
             {/* Description */}
-            <p className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[38px] mb-8">
+            <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-6 lg:mb-8 leading-relaxed">
               Achieve NET ZERO emissions by shifting from fossil fuel-based energy to renewable energy by engaging GreenCarbonHub. Reduce 0.84 tonnes of CO2 emissions per annum per KW of Solar power installed.
             </p>
             <button
               onClick={handleGetStarted}
-              className="inline-block bg-orange-500 text-white px-10 md:px-12 py-4 md:py-5 rounded-full text-lg md:text-xl font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
+              className="inline-block bg-orange-500 text-white px-8 lg:px-10 xl:px-12 py-3 lg:py-4 xl:py-5 rounded-full text-base lg:text-lg xl:text-xl font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:bg-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-black/10 cursor-pointer"
             >
               Get Started
             </button>
@@ -290,7 +289,7 @@ const ResidentialHeroSection = () => {
         </div>
 
         {/* Form Section - Right Side (Desktop) */}
-        <div className="w-[600px] xl:w-[700px] flex-shrink-0 p-12 flex flex-col justify-center">
+        <div className="w-[500px] lg:w-[550px] xl:w-[600px] 2xl:w-[700px] flex-shrink-0 p-6 lg:p-8 xl:p-12 flex flex-col justify-center">
           {/* Contact Form */}
           <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 shadow-xl w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto lg:max-w-none lg:mx-0">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 md:mb-8 text-center lg:text-left">Contact Us</h2>
@@ -383,9 +382,6 @@ const Residential = () => {
       
       {}
       <OtherBenefits />
-      
-      {}
-      <Subsidy />
       
       {}
       <WhatWeDo />

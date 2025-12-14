@@ -12,22 +12,11 @@ const CTAButtons = () => {
     }
   };
 
-  const handleFinanceOptions = () => {
-    if (location.pathname === '/solar-installation') {
-      scrollToSection('our-finance-options');
-    } else {
-      navigate('/solar-installation');
-      setTimeout(() => {
-        scrollToSection('our-finance-options');
-      }, 100);
-    }
-  };
-
-  const handleSubsidy = () => {
-    if (location.pathname === '/solar-installation') {
+  const handleSubsidyClick = () => {
+    if (location.pathname === '/') {
       scrollToSection('subsidy-structure');
     } else {
-      navigate('/solar-installation');
+      navigate('/');
       setTimeout(() => {
         scrollToSection('subsidy-structure');
       }, 100);
@@ -37,19 +26,17 @@ const CTAButtons = () => {
   return (
     <div className="bg-white py-16 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <button 
-            onClick={handleSubsidy}
-            className="bg-[#3A954F] hover:bg-[#2d7a3d] text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-            style={{ borderRadius: '25px' }}
+            onClick={handleSubsidyClick}
+            className="w-full sm:w-80 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg"
           >
             AVAIL SUBSIDY
           </button>
           
           <button 
-            onClick={handleFinanceOptions}
-            className="bg-[#3A954F] hover:bg-[#2d7a3d] text-white px-12 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-            style={{ borderRadius: '25px' }}
+            onClick={() => scrollToSection('our-finance-options')}
+            className="w-full sm:w-80 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg"
           >
             VIEW FINANCE OPTIONS
           </button>

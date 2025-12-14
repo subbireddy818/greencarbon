@@ -38,7 +38,7 @@ const AboutUs = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40"></div>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white px-4 sm:px-6">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">About Green Carbon Hub</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">About <span className="text-green-400">GreenCarbon</span><span className="text-orange-400">Hub</span></h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-green-100 max-w-3xl mx-auto leading-relaxed">
                 Leading the transformation towards Net-Zero solutions with 23+ years of expertise 
                 in power management, solid waste management, and liquid waste management.
@@ -136,7 +136,7 @@ const AboutUs = () => {
             <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
               <div>
                 <h3 className="text-green-600 font-semibold text-xs sm:text-sm uppercase tracking-wide mb-2 sm:mb-3">
-                  About Green Carbon Hub
+                  About <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span>
                 </h3>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 leading-tight">
                   Transforming the World with Sustainable Solar Solutions
@@ -144,7 +144,7 @@ const AboutUs = () => {
               </div>
               
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg">
-                At Green Carbon Hub, we are committed to creating a sustainable future through innovative 
+                At <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span>, we are committed to creating a sustainable future through innovative 
                 renewable energy solutions. Our mission is to harness the power of solar energy to create 
                 a cleaner, greener planet for generations to come.
               </p>
@@ -191,8 +191,8 @@ const AboutUs = () => {
       <section className="py-12 sm:py-16 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">Why Choose GreenCarbonHub?</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600">Accelerate your Net Zero journey with GreenCarbonHub!</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">Why Choose <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span>?</h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600">Accelerate your Net Zero journey with <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span>!</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -378,11 +378,11 @@ const AboutUs = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">Who We Are</h2>
               <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-600 leading-relaxed">
                 <p>
-                  GreenCarbonHub is promoted by a Civil Servant with 23 years of experience in administration, 
+                  <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span> is promoted by a Civil Servant with 23 years of experience in administration, 
                   specializing in power management, solid waste management, and liquid waste management.
                 </p>
                 <p>
-                  With a team of experienced subject experts, GreenCarbonHub offers complete Net-Zero solutions 
+                  With a team of experienced subject experts, <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span> offers complete Net-Zero solutions 
                   under one roof. We combine administrative expertise with technical excellence to deliver 
                   sustainable solutions that make a real impact.
                 </p>
@@ -484,7 +484,7 @@ const AboutUs = () => {
       <section className="py-12 sm:py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">Why Choose Green Carbon Hub?</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">Why Choose <span className="text-green-200">GreenCarbon</span><span className="text-orange-300">Hub</span>?</h2>
             <p className="text-base sm:text-lg lg:text-xl text-green-100">The advantages that set us apart</p>
           </div>
           

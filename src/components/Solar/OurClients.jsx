@@ -34,7 +34,7 @@ const OurClients = () => {
         </div>
 
         {}
-        <div className="flex justify-between items-center px-8">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-8 md:gap-0 px-8">
           {clients.map((client, index) => (
             <div key={client.id} className="flex justify-center">
               <img

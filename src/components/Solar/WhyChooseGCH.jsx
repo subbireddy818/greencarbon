@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   DollarSign,
   Users,
@@ -9,6 +10,26 @@ import {
 } from "lucide-react";
 
 const WhyChooseGCH = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleContactClick = () => {
+    if (location.pathname === '/') {
+      scrollToSection('contact-us');
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        scrollToSection('contact-us');
+      }, 100);
+    }
+  };
    const benefits = [
     {
       id: 1,
@@ -53,18 +74,14 @@ const WhyChooseGCH = () => {
         {}
         <h2 className="text-gray-900 font-bold text-3xl md:text-4xl lg:text-5xl leading-snug mb-6">
           Why Choose{" "}
-          <span className="text-green-600">GreenCarbonHub</span> for Your
+          <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span> for Your
           Rooftop Solar Power Project?
         </h2>
 
         {}
         <p className="text-gray-600 text-base sm:text-lg md:text-[17.5px] leading-relaxed max-w-4xl mx-auto mb-12 text-justify md:text-center">
-          <span className="font-semibold text-gray-800">GreenCarbonHub</span> is
-          promoted by a Civil Servant with 23 years of experience in
-          administration — power, solid waste, and liquid waste management. Backed
-          by a team of seasoned experts, we provide all Net-Zero solutions under
-          one roof. If you’re looking for the best rooftop solar company in
-          Hyderabad, here’s why we stand out:
+          <span className="font-semibold text-gray-800"><span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span></span> is
+          promoted by an experienced team with 75+ years of cumulative experience in solar power management. Aided by a strong advisory board <span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span> offers integrated net-zero solutions.
         </p>
 
         {}
@@ -84,12 +101,17 @@ const WhyChooseGCH = () => {
 
         {}
         <p className="text-gray-600 text-base sm:text-lg md:text-[17.5px] leading-relaxed max-w-4xl mx-auto mt-14 text-justify md:text-center">
-          <span className="font-semibold text-gray-800">GreenCarbonHub</span>’s
+          <span className="font-semibold text-gray-800"><span className="text-green-600">GreenCarbon</span><span className="text-orange-500">Hub</span></span>'s
           engineers have successfully designed and installed numerous rooftop
           solar systems. We work closely with you to tailor solutions for your
           unique energy needs delivering reliability, top-tier products, and
-          24/7 support. Choose excellence. Choose sustainability.{" "}
-          <span className="text-green-600 font-semibold">Contact us today!</span>
+          24/7 support.           Choose excellence. Choose sustainability.{" "}
+          <span 
+            onClick={handleContactClick}
+            className="text-green-600 font-semibold cursor-pointer hover:text-orange-500 transition-colors underline"
+          >
+            Contact us today!
+          </span>
         </p>
       </div>
     </section>

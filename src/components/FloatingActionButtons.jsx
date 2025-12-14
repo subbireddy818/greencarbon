@@ -41,6 +41,16 @@ const FloatingActionButtons = () => {
             perspective: 1000px !important;
           }
           
+          .phone-button {
+            display: none !important;
+          }
+          
+          @media (max-width: 768px) {
+            .phone-button {
+              display: flex !important;
+            }
+          }
+          
           @media (max-width: 1024px) {
             .floating-buttons-container {
               position: fixed !important;
@@ -129,6 +139,7 @@ const FloatingActionButtons = () => {
 
       <button
         onClick={handlePhone}
+        className="phone-button"
         style={{
           width: '56px',
           height: '56px',
