@@ -173,7 +173,7 @@ const Navbar = () => {
             to="/gch-store"
             className="font-medium text-sm xl:text-base transition-colors group"
           >
-            <span className="text-green-600 group-hover:text-orange-500 transition-colors">GC</span><span className="text-orange-500 group-hover:text-green-600 transition-colors">H</span> <span className="text-green-600">Store</span>
+            <span className="text-green-600 group-hover:text-orange-500 transition-colors">GC</span><span className="text-orange-500 group-hover:text-green-600 transition-colors">H</span> <span className="text-green-600 group-hover:text-orange-500 transition-colors">Store</span>
           </Link>
           <button
             onClick={() => handleNavigation('/', 'contact-us')}
@@ -336,7 +336,7 @@ const Navbar = () => {
             className="block font-medium text-sm sm:text-base transition-colors group"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <span className="text-green-600 group-hover:text-orange-500 transition-colors">GC</span><span className="text-orange-500 group-hover:text-green-600 transition-colors">H</span> <span className="text-green-600">Store</span>
+            <span className="text-green-600 group-hover:text-orange-500 transition-colors">GC</span><span className="text-orange-500 group-hover:text-green-600 transition-colors">H</span> <span className="text-green-600 group-hover:text-orange-500 transition-colors">Store</span>
           </Link>
           <button
             onClick={() => handleNavigation('/', 'contact-us')}
