@@ -66,9 +66,9 @@ const HomeServicesSection = () => {
               }}
             >
               
-              <h3 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 md:mb-6 text-center ${service.title === 'GCH Store' ? 'cursor-pointer' : ''}`}>
+              <h3 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 md:mb-6 text-center ${service.title === 'GCH Store' ? 'cursor-pointer group-hover:scale-105 transition-transform duration-300' : ''}`}>
                 {service.title === 'GCH Store' ? (
-                  <><span className="text-green-600 group-hover:text-orange-400 transition-colors duration-300">GC</span><span className="text-orange-400 group-hover:text-green-600 transition-colors duration-300">H</span> Store</>
+                  <><span className="text-green-600">GC</span><span className="text-orange-500">H</span> Store</>
                 ) : (
                   service.title
                 )}

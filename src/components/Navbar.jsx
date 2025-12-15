@@ -171,9 +171,9 @@ const Navbar = () => {
           </Link>
           <Link
             to="/gch-store"
-            className="text-green-600 hover:text-orange-500 transition-colors font-medium text-sm xl:text-base"
+            className="font-medium text-sm xl:text-base transition-colors group"
           >
-            GCH Store
+            <span className="text-green-600 group-hover:text-orange-500 transition-colors">GC</span><span className="text-orange-500 group-hover:text-green-600 transition-colors">H</span> Store
           </Link>
           <button
             onClick={() => handleNavigation('/', 'contact-us')}
@@ -333,10 +333,10 @@ const Navbar = () => {
           </Link>
           <Link
             to="/gch-store"
-            className="block text-green-600 hover:text-orange-500 transition-colors font-medium text-sm sm:text-base"
+            className="block font-medium text-sm sm:text-base transition-colors group"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            GCH Store
+            <span className="text-green-600 group-hover:text-orange-500 transition-colors">GC</span><span className="text-orange-500 group-hover:text-green-600 transition-colors">H</span> Store
           </Link>
           <button
             onClick={() => handleNavigation('/', 'contact-us')}

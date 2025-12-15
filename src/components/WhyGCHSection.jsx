@@ -40,7 +40,7 @@ const WhyGCHSection = () => {
             ${hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
           `}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-8 md:mb-12 text-center cursor-pointer">
-              Why <span className="text-green-600 group-hover:text-orange-400 transition-colors duration-300">GC</span><span className="text-orange-400 group-hover:text-green-600 transition-colors duration-300">H</span> ?
+              Why <span className="text-green-600">GC</span><span className="text-orange-500">H</span> ?
             </h2>
             
             <div className="space-y-4 md:space-y-6">
