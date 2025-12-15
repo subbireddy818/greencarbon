@@ -28,7 +28,6 @@ import GCHStore from "./GCHStore.jsx";
 import WhyChooseGCH from "./Solar/WhyChooseGCH.jsx";
 import OurClients from "./Solar/OurClients.jsx";
 import FloatingActionButtons from "./FloatingActionButtons.jsx";
-import Subsidy from "./Solar/Subsidy.jsx";
 import Login from "./Login.jsx";
 import Signup from "./Signup.jsx";
 import ForgotPassword from "./ForgotPassword.jsx";
@@ -96,7 +95,6 @@ function HomePage() {
       <Installations />
       <HomeServicesSection />
       <OurClients />
-      <Subsidy />
       <Team />
       {/* <Board /> */}
       <Contact />

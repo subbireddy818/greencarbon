@@ -9,6 +9,7 @@ import { Monitor, DollarSign, Home as HomeIcon, Settings, Leaf } from "lucide-re
 import Weprovide from "./Weprovide.jsx";
 import RooftopSolutions from "./RooftopSolutions.jsx";
 import FinanceOptions from "./FinanceOptions.jsx";
+import Subsidy from "./Subsidy.jsx";
 import DocumentRequirements from "./DocumentRequirements.jsx";
 import LoanCalculator from "./LoanCalculator.jsx";
 import RepaymentTable from "./RepaymentTable.jsx";
@@ -76,7 +77,9 @@ function SolarInstallation() {
       <OtherBenefits tabbedItems={solarBenefitsTabs} />
       <Weprovide type="residential" />
       <RooftopSolutions />
+      {/* Order: FinanceOptions -> Subsidy -> DocumentRequirements */}
       <FinanceOptions />
+      <Subsidy />
       <DocumentRequirements />
       <LoanCalculator sharedLoanData={sharedLoanData} setSharedLoanData={setSharedLoanData} />
       <RepaymentTable 

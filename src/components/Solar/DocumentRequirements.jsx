@@ -150,7 +150,7 @@ export default function DocumentRequirements() {
   return (
     <section
       id="our-finance-options"
-      className={`w-full bg-white pt-12 sm:pt-16 md:pt-20 lg:pt-[100px] pb-12 sm:pb-16 md:pb-20 lg:pb-[70px] transition-opacity duration-1000 ${
+      className={`w-full bg-white pt-8 sm:pt-12 md:pt-16 lg:pt-16 xl:pt-20 pb-8 sm:pb-12 md:pb-16 lg:pb-16 transition-opacity duration-1000 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >

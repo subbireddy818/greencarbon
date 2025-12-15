@@ -13,10 +13,10 @@ const CTAButtons = () => {
   };
 
   const handleSubsidyClick = () => {
-    if (location.pathname === '/') {
+    if (location.pathname === '/solar-installation') {
       scrollToSection('subsidy-structure');
     } else {
-      navigate('/');
+      navigate('/solar-installation');
       setTimeout(() => {
         scrollToSection('subsidy-structure');
       }, 100);
